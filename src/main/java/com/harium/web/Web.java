@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static spark.Spark.staticFiles;
+
 public class Web {
 
     private static String host = "";
@@ -63,6 +65,21 @@ public class Web {
         }
 
         return model;
+    }
+
+    public static void staticFileLocation(String folder) {
+        if (isLocalHost()) {
+            String projectDir = System.getProperty("user.dir");
+            String staticDir = "/src/main/resources" + folder;
+            staticFiles.externalLocation(projectDir + staticDir);
+        } else {
+            staticFiles.location(folder);
+        }
+    }
+
+    private static boolean isLocalHost() {
+        String noPrefix = host.replaceFirst("^(http[s]?://www\\.|http[s]?://|www\\.)", "");
+        return noPrefix.startsWith("localhost");
     }
 
     public static void host(String host) {
