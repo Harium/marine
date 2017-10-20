@@ -6,7 +6,7 @@
 
     <groupId>com.harium.web</groupId>
     <artifactId>core</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>Harium Web Framework</name>
     <description>A web framework over sparkjava</description>
