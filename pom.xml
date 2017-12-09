@@ -6,7 +6,7 @@
 
     <groupId>com.harium.web</groupId>
     <artifactId>core</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <name>Harium Web Framework</name>
     <description>A web framework over sparkjava</description>
@@ -68,8 +68,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <optimize>true</optimize>
                 </configuration>
             </plugin>
