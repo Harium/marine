@@ -1,4 +1,4 @@
-package com.harium.web.model;
+package com.harium.marine.model;
 
 import spark.Request;
 

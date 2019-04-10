@@ -1,6 +1,6 @@
-package com.harium.web;
+package com.harium.marine;
 
-import com.harium.web.model.WebModule;
+import com.harium.marine.model.WebModule;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
@@ -16,7 +16,7 @@ import static spark.Spark.before;
 import static spark.Spark.options;
 import static spark.Spark.staticFiles;
 
-public class Web {
+public class Marine {
 
     private static int port;
     private static String host = "";
@@ -30,7 +30,7 @@ public class Web {
     }
 
     public static void init() {
-        Web.acceptEndSlash();
+        Marine.acceptEndSlash();
         for (Class<?> controller : registers) {
             try {
                 Constructor<?> constructor = controller.getConstructor();
@@ -86,11 +86,11 @@ public class Web {
     }
 
     public static void host(String host) {
-        Web.host = host;
+        Marine.host = host;
     }
 
     public static void port(int port) {
-        Web.port = port;
+        Marine.port = port;
         Spark.port(port);
     }
 

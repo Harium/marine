@@ -1,7 +1,17 @@
-# web
+# Marine
 A web framework over sparkjava
 
+## Maven
+```
+<dependency>
+    <groupId>com.harium.marine</groupId>
+    <artifactId>core</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Usage
+
 Example using [dotenv](https://github.com/Harium/dotenv).
 ```
 ...
@@ -25,3 +35,6 @@ public class Main {
     }
 }
 ```
+
+## Need more information?
+See examples
