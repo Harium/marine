@@ -1,6 +1,6 @@
 package examples;
 
-import com.harium.marine.Marine;
+import com.harium.marine.Web;
 
 public class HelloWorld {
 
@@ -12,16 +12,16 @@ public class HelloWorld {
 
         System.out.println(host);
 
-        Marine.port(port);
-        Marine.host(host);
+        Web.port(port);
+        Web.host(host);
 
-        Marine.staticFileLocation("/public");
+        Web.staticFileLocation("/public");
 
         // Register Web Modules
         //Marine.register(HealthCheck.class);
 
         // Init Web Modules
-        Marine.init();
+        Web.init();
     }
 
 }

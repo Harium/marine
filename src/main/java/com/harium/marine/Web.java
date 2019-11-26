@@ -16,7 +16,7 @@ import static spark.Spark.before;
 import static spark.Spark.options;
 import static spark.Spark.staticFiles;
 
-public class Marine {
+public class Web {
 
     private static int port;
     private static String host = "";
@@ -30,7 +30,7 @@ public class Marine {
     }
 
     public static void init() {
-        Marine.acceptEndSlash();
+        Web.acceptEndSlash();
         for (Class<?> controller : registers) {
             try {
                 Constructor<?> constructor = controller.getConstructor();
@@ -86,11 +86,11 @@ public class Marine {
     }
 
     public static void host(String host) {
-        Marine.host = host;
+        Web.host = host;
     }
 
     public static void port(int port) {
-        Marine.port = port;
+        Web.port = port;
         Spark.port(port);
     }
 
