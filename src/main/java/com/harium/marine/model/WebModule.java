@@ -6,5 +6,7 @@ import java.util.Map;
 
 public interface WebModule {
     void init();
-    void buildModel(Request request, Map<String, Object> model);
+    default void buildModel(Request request, Map<String, Object> model) {
+
+    }
 }

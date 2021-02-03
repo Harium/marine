@@ -1,12 +1,13 @@
 # Marine
-A web framework over sparkjava
+A web framework built over sparkjava
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.harium.marine/core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.harium.marine/core/)
 
 ## Maven
 ```
 <dependency>
     <groupId>com.harium.marine</groupId>
     <artifactId>core</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 

@@ -25,12 +25,11 @@ public class Web {
     static List<WebModule> webModules = new ArrayList<>();
     static List<Class<? extends WebModule>> registers = new ArrayList<>();
 
-    public static void register(Class<? extends WebModule> controller) {
-        registers.add(controller);
-    }
-
     public static void init() {
         Web.acceptEndSlash();
+        for (WebModule webModule : webModules) {
+            webModule.init();
+        }
         for (Class<?> controller : registers) {
             try {
                 Constructor<?> constructor = controller.getConstructor();
@@ -44,13 +43,21 @@ public class Web {
         registers.clear();
     }
 
+    public static void register(WebModule webModule) {
+        webModules.add(webModule);
+    }
+
+    public static void register(Class<? extends WebModule> controller) {
+        registers.add(controller);
+    }
+
     /**
      * Method to treat paths with end slash
      */
     public static void acceptEndSlash() {
         before(new Filter() {
             @Override
-            public void handle(Request request, Response response) throws Exception {
+            public void handle(Request request, Response response) {
                 String path = request.pathInfo();
                 if (!"/".equals(path) && path.endsWith("/")) {
                     response.redirect(path.substring(0, path.length() - 1));
