@@ -27,10 +27,12 @@ public class Main {
         Web.port(Integer.parseInt(Env.get("PORT")));
         Web.host(host);
 
+        // Defining public resources
         Web.staticFileLocation("/public");
 
         // Register Web Modules
-        Web.register(HealthCare.class);
+        Web.register(HealthCare.class); // Using class
+        Web.register(() -> get("/hello", (req, res) -> "Hello World")); // Using instance
         // Init Web Modules
         Web.init();
     }
